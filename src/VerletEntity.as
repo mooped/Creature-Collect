@@ -4,6 +4,7 @@ package
 	import net.flashpunk.Graphic;
 	import net.flashpunk.Mask;
 	import net.flashpunk.World;
+	import net.flashpunk.FP;
 	
 	/**
 	 * ...
@@ -11,7 +12,8 @@ package
 	 */
 	public class VerletEntity extends Entity 
 	{
-		private static const TIMESTEP:Number = 1;
+		private static const TIMESTEP:Number = 0.5;
+		
 		private var xo:Number;
 		private var yo:Number;
 		private var ax:Number;
@@ -49,7 +51,7 @@ package
 				
 				e.xo = tempx;
 				e.yo = tempy;
-				
+			
 				e.ax = 0;
 				e.ay = 0;
 			}

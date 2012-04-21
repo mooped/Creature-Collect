@@ -12,7 +12,7 @@ package
 		
 		public function Main():void 
 		{
-			super(800, 600, 60, false);
+			super(800, 600, 60, true);
 			
 			FP.world = new GameWorld;
 		}
