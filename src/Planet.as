@@ -21,6 +21,9 @@ package
 			PLANET_1, PLANET_2, PLANET_3, PLANET_4, PLANET_5, PLANET_6,
 		];
 		
+		public var gravityDist:Number = 512;
+		public var gravity:Number = 2;
+		
 		public function Planet(x:Number=0, y:Number=0, sprite:int=0) 
 		{
 			super(x, y, null, null);
@@ -28,6 +31,8 @@ package
 			graphic = new Image(SPRITES[sprite]);
 			graphic.x -= 128;
 			graphic.y -= 128;
+			
+			setHitbox(256, 256, -128, -128);
 		}
 		
 	}

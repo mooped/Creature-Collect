@@ -19,7 +19,7 @@ package
 		
 		override public function init():void 
 		{
-			trace("Started");
+			trace("Started FlashPunk");
 		}
 		
 	}
