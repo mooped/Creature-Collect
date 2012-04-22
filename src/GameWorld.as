@@ -35,58 +35,66 @@ package
 			var dataList:XMLList;
 			var dataElement:XML;
 			
-			dataList = xmlData.Planets.Planet;
+			dataList = xmlData.Planets.children();
 			for each (dataElement in dataList)
 			{
-				add(new Planet(dataElement.@x, dataElement.@y, dataElement.@Sprite));
+				switch (dataElement.localName())
+				{
+					case "Planet":
+					{
+						add(new Planet(dataElement.@x, dataElement.@y, dataElement.@sprite));
+					} break;
+					case "BackdropSprite":
+					{
+						add(new BackdropSprite(dataElement.@x, dataElement.@y, dataElement.@sprite));
+					} break;
+					case "Player":
+					{
+						add(new Player(dataElement.@x, dataElement.@y));
+					} break;
+					case "KnownUniverse":
+					{
+						minx = dataElement.@x;
+						miny = dataElement.@y;
+						maxx = dataElement.@width;
+						maxy = dataElement.@height;
+						maxx += minx;
+						maxy += miny;
+					} break;
+					case "Turtle":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 0, dataElement.@angle));
+					} break;
+					case "Armadillo":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 1, dataElement.@angle));
+					} break;
+					case "Kangaroo":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 2, dataElement.@angle));
+					} break;
+					case "Chicken":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 3, dataElement.@angle));
+					} break;
+					case "Amoeba":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 4, dataElement.@angle));
+					} break;
+					case "Yak":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 5, dataElement.@angle));
+					} break;
+					case "Crocodile":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 6, dataElement.@angle));
+					} break;
+					case "Fish":
+					{
+						add(new Creature(dataElement.@x, dataElement.@y, 7, dataElement.@angle));
+					} break;
+				}
 			}
-			
-			dataList = xmlData.Planets.BackdropSprite;
-			for each (dataElement in dataList)
-			{
-				add(new BackdropSprite(dataElement.@x, dataElement.@y, dataElement.@sprite));
-			}			
-			
-			dataList = xmlData.Planets.Player;
-			for each (dataElement in dataList)
-			{
-				add(new Player(dataElement.@x, dataElement.@y));
-			}
-			
-			dataList = xmlData.Planets.KnownUniverse;
-			for each (dataElement in dataList)
-			{
-				minx = dataElement.@x;
-				miny = dataElement.@y;
-				maxx = dataElement.@width;
-				maxy = dataElement.@height;
-				maxx += minx;
-				maxy += miny;
-			}
-			
-			dataList = xmlData.Planets.Turtle;
-			for each (dataElement in dataList)
-			{
-				add(new Creature(dataElement.@x, dataElement.@y, 0, dataElement.@angle));
-			}
-
-			dataList = xmlData.Planets.Armadillo;
-			for each (dataElement in dataList)
-			{
-				add(new Creature(dataElement.@x, dataElement.@y, 1, dataElement.@angle));
-			}
-
-			dataList = xmlData.Planets.Kangaroo;
-			for each (dataElement in dataList)
-			{
-				add(new Creature(dataElement.@x, dataElement.@y, 2, dataElement.@angle));
-			}
-
-			dataList = xmlData.Planets.Chicken;
-			for each (dataElement in dataList)
-			{
-				add(new Creature(dataElement.@x, dataElement.@y, 3, dataElement.@angle));
-			}			
 		}
 		
 		override public function update():void
