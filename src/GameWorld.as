@@ -44,7 +44,6 @@ package
 			var dataElement:XML;
 			
 			next = xmlData.@Next;
-			trace("Next", next);
 			
 			dataList = xmlData.Planets.children();
 			for each (dataElement in dataList)
