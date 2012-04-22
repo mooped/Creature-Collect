@@ -19,7 +19,9 @@ package
 		private var ax:Number;
 		private var ay:Number;
 		
-		public function VerletEntity(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null) 
+		protected var radius:Number = 0;
+		
+		public function VerletEntity(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null)
 		{
 			super(x, y, graphic, mask);
 			xo = x;
@@ -33,10 +35,16 @@ package
 			var verletList:Array = [];
 			world.getClass(VerletEntity, verletList);
 			
-			verlet(verletList);
-			satisfyConstraints(verletList);
-			accumulateForces(verletList);
-			applyFriction(verletList);
+			var planetList:Array = [];
+			world.getClass(Planet, planetList);
+			
+			for (var i:int = 0; i < 1; ++i)
+			{
+				verlet(verletList);
+				satisfyConstraints(verletList, planetList);
+				accumulateForces(verletList);
+				applyFriction(verletList);
+			}
 		}
 		
 		private static function verlet(verletList:Array):void
@@ -57,9 +65,48 @@ package
 			}
 		}
 		
-		private static function satisfyConstraints(verletList:Array):void
+		private static function satisfyConstraints(verletList:Array, planetList:Array):void
 		{
-			
+			const len:int = verletList.length;
+			for (var i:int = 0; i < len; ++i)
+			{
+				for (var j:int = 0; j < i; ++j)
+				{
+					satisfyRadiusConstraint(verletList[i], verletList[j]);
+				}
+				for each (var planet:Planet in planetList)
+				{
+					satisfyPlanetConstraint(verletList[i], planet);
+				}
+			}
+		}
+		
+		private static function satisfyRadiusConstraint(a:VerletEntity, b:VerletEntity):void
+		{
+			const dist:Number = a.distanceFrom(b);
+			if (dist <= (a.radius + b.radius))
+			{
+				const dx:Number = (b.x - a.x) / dist;
+				const dy:Number = (b.y - a.y) / dist;
+				const radius:Number = a.radius + b.radius;
+				a.x = b.x - dx * radius;
+				a.y = b.y - dy * radius;
+				b.x = a.x + dx * radius;
+				b.y = a.y + dy * radius;
+			}
+		}
+		
+		private static function satisfyPlanetConstraint(a:VerletEntity, b:Planet):void
+		{
+			const dist:Number = a.distanceFrom(b);
+			if (dist <= (a.radius + b.radius))
+			{
+				const dx:Number = (b.x - a.x) / dist;
+				const dy:Number = (b.y - a.y) / dist;
+				const radius:Number = a.radius + b.radius;
+				a.x = b.x - dx * radius;
+				a.y = b.y - dy * radius;
+			}
 		}
 		
 		private static function accumulateForces(verletList:Array):void

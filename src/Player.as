@@ -41,6 +41,7 @@ package
 			
 			updateAngles(true);
 			graphic = still;
+			radius = still.width * 0.45;
 			
 			Input.define("Thrust", Key.W);
 			Input.define("Left", Key.A);
@@ -54,7 +55,6 @@ package
 			updateAngles();
 			
 			applyThrust();
-			applyGravity();
 			
 			checkBounds();
 			
@@ -100,24 +100,6 @@ package
 			if (thrusting)
 			{
 				addForce(-Math.sin(angle * RADIAN), -Math.cos(angle * RADIAN));
-			}
-		}
-		
-		public function applyGravity():void
-		{
-			var planets:Array = [];
-			world.getClass(Planet, planets);
-			
-			for each (var planet:Planet in planets)
-			{
-				var dist:Number = distanceFrom(planet);
-				if (dist != 0 && dist < planet.gravityDist)
-				{
-					var invdist:Number = 1.0 / dist;
-					var ax:Number = ((x - planet.x) * invdist) * (1 - (dist / planet.gravityDist)) * planet.gravity;
-					var ay:Number = ((y - planet.y) * invdist) * (1 - (dist / planet.gravityDist)) * planet.gravity;
-					//addForce(-ax, -ay);
-				}
 			}
 		}
 		

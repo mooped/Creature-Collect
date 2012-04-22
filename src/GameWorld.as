@@ -63,6 +63,30 @@ package
 				maxx += minx;
 				maxy += miny;
 			}
+			
+			dataList = xmlData.Planets.Turtle;
+			for each (dataElement in dataList)
+			{
+				add(new Creature(dataElement.@x, dataElement.@y, 0, dataElement.@angle));
+			}
+
+			dataList = xmlData.Planets.Armadillo;
+			for each (dataElement in dataList)
+			{
+				add(new Creature(dataElement.@x, dataElement.@y, 1, dataElement.@angle));
+			}
+
+			dataList = xmlData.Planets.Kangaroo;
+			for each (dataElement in dataList)
+			{
+				add(new Creature(dataElement.@x, dataElement.@y, 2, dataElement.@angle));
+			}
+
+			dataList = xmlData.Planets.Chicken;
+			for each (dataElement in dataList)
+			{
+				add(new Creature(dataElement.@x, dataElement.@y, 3, dataElement.@angle));
+			}			
 		}
 		
 		override public function update():void

@@ -22,17 +22,39 @@ package
 		];
 		
 		public var gravityDist:Number = 512;
-		public var gravity:Number = 2;
+		public var gravity:Number = 1;
+		
+		public var radius:Number = 0;
 		
 		public function Planet(x:Number=0, y:Number=0, sprite:int=0) 
 		{
 			super(x, y, null, null);
 			
-			graphic = new Image(SPRITES[sprite]);
+			var image:Image = new Image(SPRITES[sprite]);
+			radius = image.width * 0.25;
+			graphic = image;
 			graphic.x -= 128;
 			graphic.y -= 128;
 			
 			setHitbox(256, 256, -128, -128);
+		}
+		
+		override public function update():void
+		{
+			var verlets:Array = [];
+			world.getClass(VerletEntity, verlets);
+			
+			for each (var e:VerletEntity in verlets)
+			{
+				var dist:Number = distanceFrom(e);
+				if (dist != 0 && dist < gravityDist)
+				{
+					var invdist:Number = 1.0 / dist;
+					var ax:Number = ((x - e.x) * invdist) * (1 - (dist / gravityDist)) * gravity;
+					var ay:Number = ((y - e.y) * invdist) * (1 - (dist / gravityDist)) * gravity;
+					e.addForce(ax, ay);
+				}
+			}
 		}
 		
 	}

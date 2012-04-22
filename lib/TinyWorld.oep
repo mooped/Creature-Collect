@@ -104,5 +104,65 @@
       <ValueDefinitions />
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
+    <EntityDefinition Name="Turtle" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>32</X>
+        <Y>32</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="Animal_1.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Armadillo" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>32</X>
+        <Y>32</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="Animal_2.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Kangaroo" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>32</X>
+        <Y>32</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="Animal_3.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Chicken" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>32</X>
+        <Y>32</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="Animal_4.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
   </EntityDefinitions>
 </project>
