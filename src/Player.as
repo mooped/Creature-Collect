@@ -15,7 +15,9 @@ package
 	 */
 	public class Player extends VerletEntity 
 	{
-		private const RADIAN:Number = Math.PI / 180;
+		private static const RADIAN:Number = Math.PI / 180;
+		
+		private static const BRAKE_FACTOR:Number = 0.75;
 		
 		[Embed(source = '../lib/Ship_No_Thrusters.png')] private const PLAYER_STILL:Class;
 		[Embed(source = '../lib/Ship_Thrusters.png')] private const PLAYER_THRUST:Class;
@@ -28,6 +30,7 @@ package
 		private var graphics:Graphiclist;
 		
 		private var thrusting:Boolean = false;
+		private var braking:Boolean = false;
 		private var turn:Number = 0;
 		
 		private var initx:Number = 0;
@@ -44,6 +47,7 @@ package
 			inity = y;
 			
 			thrusting = false;
+			braking = false;
 			angle = 0;
 			turn = 0;
 			
@@ -54,6 +58,7 @@ package
 			radius = still.width * 0.45;
 			
 			Input.define("Thrust", Key.W);
+			Input.define("Brake", Key.S);
 			Input.define("Left", Key.A);
 			Input.define("Right", Key.D);
 		}
@@ -83,7 +88,16 @@ package
 			if (Input.released("Thrust"))
 			{
 				thrusting = false;
+			}
+			
+			if (Input.pressed("Brake"))
+			{
+				braking = true;
 				resetTutorial();
+			}
+			if (Input.released("Brake"))
+			{
+				braking = false;
 			}
 			
 			if (Input.pressed("Left"))
@@ -133,6 +147,10 @@ package
 			if (thrusting)
 			{
 				addForce(-Math.sin(angle * RADIAN), -Math.cos(angle * RADIAN));
+			}
+			if (braking)
+			{
+				addForce(Math.sin(angle * RADIAN) * BRAKE_FACTOR, Math.cos(angle * RADIAN) * BRAKE_FACTOR);
 			}
 		}
 		
