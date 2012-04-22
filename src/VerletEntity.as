@@ -43,7 +43,6 @@ package
 				verlet(verletList);
 				satisfyConstraints(verletList, planetList);
 				accumulateForces(verletList);
-				applyFriction(verletList);
 			}
 		}
 		
@@ -110,11 +109,6 @@ package
 		}
 		
 		private static function accumulateForces(verletList:Array):void
-		{
-			
-		}
-		
-		private static function applyFriction(verletList:Array):void
 		{
 			
 		}
