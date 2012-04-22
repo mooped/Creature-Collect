@@ -1,0 +1,29 @@
+<level>
+  <Planets>
+    <Planet id="0" x="1168" y="864" Sprite="0" />
+    <Planet id="1" x="560" y="256" Sprite="4" />
+    <Planet id="2" x="1152" y="224" Sprite="3" />
+    <Planet id="3" x="848" y="608" Sprite="3" />
+    <Planet id="4" x="256" y="544" Sprite="1" />
+    <Planet id="5" x="752" y="1184" Sprite="1" />
+    <Planet id="6" x="224" y="1168" Sprite="2" />
+    <Planet id="7" x="432" y="1552" Sprite="5" />
+    <Planet id="8" x="80" y="1584" Sprite="3" />
+    <Planet id="9" x="1056" y="1648" Sprite="2" />
+    <Planet id="10" x="2176" y="176" Sprite="2" />
+    <Planet id="11" x="1648" y="432" Sprite="2" />
+    <Planet id="12" x="2176" y="1248" Sprite="3" />
+    <Planet id="13" x="1600" y="1456" Sprite="5" />
+    <Planet id="14" x="2048" y="704" Sprite="0" />
+    <Planet id="15" x="1984" y="896" Sprite="4" />
+    <Planet id="16" x="2032" y="1616" Sprite="0" />
+    <Planet id="17" x="1936" y="1440" Sprite="1" />
+    <Planet id="18" x="1104" y="560" Sprite="1" />
+    <Planet id="19" x="80" y="64" Sprite="2" />
+    <Planet id="21" x="912" y="64" Sprite="5" />
+    <Planet id="22" x="688" y="1440" Sprite="3" />
+    <Player id="23" x="1200" y="800" angle="0" />
+    <Planet id="24" x="1328" y="1376" Sprite="5" />
+    <Planet id="20" x="1856" y="96" Sprite="1" />
+  </Planets>
+</level>

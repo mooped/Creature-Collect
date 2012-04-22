@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OgmoVersion>2.0.0.38</OgmoVersion>
+  <Name>New Project</Name>
+  <BackgroundColor A="255" R="125" G="160" B="255" />
+  <GridColor A="255" R="255" G="240" B="90" />
+  <LevelDefaultSize>
+    <Width>2400</Width>
+    <Height>1800</Height>
+  </LevelDefaultSize>
+  <LevelMinimumSize>
+    <Width>2400</Width>
+    <Height>1800</Height>
+  </LevelMinimumSize>
+  <LevelMaximumSize>
+    <Width>2400</Width>
+    <Height>1800</Height>
+  </LevelMaximumSize>
+  <Filename>C:\Users\moop\devel\TinyWorld\src\levels\TinyWorld.oep</Filename>
+  <AngleMode>Radians</AngleMode>
+  <CameraEnabled>false</CameraEnabled>
+  <CameraSize>
+    <Width>640</Width>
+    <Height>480</Height>
+  </CameraSize>
+  <ExportCameraPosition>false</ExportCameraPosition>
+  <LevelValueDefinitions />
+  <LayerDefinitions>
+    <LayerDefinition xsi:type="EntityLayerDefinition">
+      <Name>Planets</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+    </LayerDefinition>
+  </LayerDefinitions>
+  <Tilesets />
+  <EntityDefinitions>
+    <EntityDefinition Name="Planet" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>128</Width>
+        <Height>128</Height>
+      </Size>
+      <Origin>
+        <X>64</X>
+        <Y>64</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\..\lib\planet_1.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="IntValueDefinition" Name="Sprite" Default="0" Min="0" Max="5" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Player" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="4">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>32</X>
+        <Y>32</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\..\lib\Ship_No_Thrusters.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+  </EntityDefinitions>
+</project>
