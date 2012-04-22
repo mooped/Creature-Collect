@@ -50,6 +50,12 @@ package
 				add(new Planet(dataElement.@x, dataElement.@y, dataElement.@Sprite));
 			}
 			
+			dataList = xmlData.Planets.BackdropSprite;
+			for each (dataElement in dataList)
+			{
+				add(new BackdropSprite(dataElement.@x, dataElement.@y, dataElement.@sprite));
+			}			
+			
 			dataList = xmlData.Planets.Player;
 			for each (dataElement in dataList)
 			{

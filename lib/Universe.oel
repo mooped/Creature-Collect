@@ -1,10 +1,9 @@
 <level>
   <Planets>
-    <Planet id="0" x="1168" y="864" Sprite="0" />
-    <Planet id="1" x="560" y="256" Sprite="4" />
-    <Planet id="2" x="1152" y="224" Sprite="3" />
-    <Planet id="3" x="848" y="608" Sprite="3" />
-    <Planet id="4" x="256" y="544" Sprite="1" />
+    <Planet id="0" x="1360" y="880" Sprite="0" />
+    <Planet id="1" x="640" y="384" Sprite="4" />
+    <Planet id="2" x="1344" y="176" Sprite="3" />
+    <Planet id="4" x="208" y="640" Sprite="1" />
     <Planet id="5" x="752" y="1184" Sprite="1" />
     <Planet id="6" x="224" y="1168" Sprite="2" />
     <Planet id="7" x="432" y="1552" Sprite="5" />
@@ -14,16 +13,71 @@
     <Planet id="11" x="1648" y="432" Sprite="2" />
     <Planet id="12" x="2176" y="1248" Sprite="3" />
     <Planet id="13" x="1600" y="1456" Sprite="5" />
-    <Planet id="14" x="2048" y="704" Sprite="0" />
     <Planet id="15" x="1984" y="896" Sprite="4" />
     <Planet id="16" x="2032" y="1616" Sprite="0" />
-    <Planet id="17" x="1936" y="1440" Sprite="1" />
     <Planet id="18" x="1104" y="560" Sprite="1" />
     <Planet id="19" x="80" y="64" Sprite="2" />
     <Planet id="21" x="912" y="64" Sprite="5" />
-    <Planet id="22" x="688" y="1440" Sprite="3" />
-    <Player id="23" x="1200" y="800" angle="0" />
-    <Planet id="24" x="1328" y="1376" Sprite="5" />
+    <Player id="23" x="1392" y="816" angle="0" />
+    <Planet id="24" x="1200" y="1264" Sprite="5" />
     <Planet id="20" x="1856" y="96" Sprite="1" />
+    <BackdropSprite id="3" x="224" y="-352" angle="0" sprite="2" />
+    <BackdropSprite id="14" x="880" y="-688" angle="0" sprite="1" />
+    <BackdropSprite id="17" x="1504" y="-272" angle="0" sprite="1" />
+    <BackdropSprite id="22" x="1968" y="-704" angle="0" sprite="0" />
+    <BackdropSprite id="25" x="2480" y="-288" angle="0" sprite="2" />
+    <BackdropSprite id="26" x="3200" y="-512" angle="0" sprite="0" />
+    <BackdropSprite id="27" x="2896" y="112" angle="0" sprite="1" />
+    <BackdropSprite id="28" x="3360" y="416" angle="0" sprite="0" />
+    <BackdropSprite id="29" x="2752" y="752" angle="0" sprite="1" />
+    <BackdropSprite id="30" x="3152" y="1376" angle="0" sprite="0" />
+    <BackdropSprite id="31" x="2704" y="1664" angle="0" sprite="2" />
+    <BackdropSprite id="32" x="2784" y="2176" angle="0" sprite="1" />
+    <BackdropSprite id="33" x="2528" y="2528" angle="0" sprite="0" />
+    <BackdropSprite id="34" x="2144" y="2032" angle="0" sprite="0" />
+    <BackdropSprite id="35" x="1760" y="2464" angle="0" sprite="1" />
+    <BackdropSprite id="36" x="1424" y="2096" angle="0" sprite="2" />
+    <BackdropSprite id="37" x="1152" y="2496" angle="0" sprite="1" />
+    <BackdropSprite id="38" x="768" y="2080" angle="0" sprite="0" />
+    <BackdropSprite id="39" x="368" y="2480" angle="0" sprite="2" />
+    <BackdropSprite id="40" x="96" y="2000" angle="0" sprite="1" />
+    <BackdropSprite id="41" x="-432" y="2336" angle="0" sprite="1" />
+    <BackdropSprite id="42" x="-256" y="1536" angle="0" sprite="0" />
+    <BackdropSprite id="43" x="-640" y="1216" angle="0" sprite="0" />
+    <BackdropSprite id="44" x="-224" y="864" angle="0" sprite="1" />
+    <BackdropSprite id="45" x="-528" y="432" angle="0" sprite="2" />
+    <BackdropSprite id="46" x="-208" y="-416" angle="0" sprite="0" />
+    <BackdropSprite id="47" x="-208" y="-64" angle="0" sprite="1" />
+    <BackdropSprite id="48" x="-192" y="432" angle="0" sprite="2" />
+    <BackdropSprite id="49" x="-560" y="800" angle="0" sprite="0" />
+    <BackdropSprite id="50" x="-320" y="1184" angle="0" sprite="2" />
+    <BackdropSprite id="51" x="-544" y="1824" angle="0" sprite="1" />
+    <BackdropSprite id="52" x="-240" y="2096" angle="0" sprite="0" />
+    <BackdropSprite id="53" x="-48" y="2448" angle="0" sprite="2" />
+    <BackdropSprite id="54" x="480" y="2192" angle="0" sprite="1" />
+    <BackdropSprite id="55" x="752" y="2528" angle="0" sprite="0" />
+    <BackdropSprite id="56" x="1088" y="2176" angle="0" sprite="1" />
+    <BackdropSprite id="57" x="1408" y="2464" angle="0" sprite="2" />
+    <BackdropSprite id="58" x="1792" y="2128" angle="0" sprite="1" />
+    <BackdropSprite id="59" x="2096" y="2448" angle="0" sprite="2" />
+    <BackdropSprite id="60" x="2496" y="2064" angle="0" sprite="0" />
+    <BackdropSprite id="61" x="3040" y="1872" angle="0" sprite="2" />
+    <BackdropSprite id="62" x="2784" y="1296" angle="0" sprite="1" />
+    <BackdropSprite id="63" x="3232" y="976" angle="0" sprite="0" />
+    <BackdropSprite id="64" x="2976" y="448" angle="0" sprite="2" />
+    <BackdropSprite id="65" x="3360" y="16" angle="0" sprite="1" />
+    <BackdropSprite id="66" x="2912" y="-288" angle="0" sprite="0" />
+    <BackdropSprite id="67" x="2528" y="-608" angle="0" sprite="1" />
+    <BackdropSprite id="68" x="2032" y="-272" angle="0" sprite="2" />
+    <BackdropSprite id="69" x="1392" y="-544" angle="0" sprite="1" />
+    <BackdropSprite id="70" x="960" y="-320" angle="0" sprite="0" />
+    <BackdropSprite id="71" x="384" y="-608" angle="0" sprite="2" />
+    <BackdropSprite id="72" x="-208" y="-704" angle="0" sprite="1" />
+    <BackdropSprite id="73" x="-640" y="-400" angle="0" sprite="1" />
+    <BackdropSprite id="74" x="-560" y="-32" angle="0" sprite="0" />
+    <BackdropSprite id="75" x="2592" y="384" angle="0" sprite="2" />
+    <BackdropSprite id="76" x="2576" y="1088" angle="0" sprite="1" />
+    <BackdropSprite id="77" x="-112" y="1152" angle="0" sprite="2" />
+    <BackdropSprite id="78" x="528" y="-224" angle="0" sprite="1" />
   </Planets>
 </level>
