@@ -22,7 +22,7 @@ package
 		];
 		
 		public var gravityDist:Number = 512;
-		public var gravity:Number = 1;
+		public var gravity:Number = 0.5;
 		
 		public var radius:Number = 0;
 		

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <OgmoVersion>2.0.0.38</OgmoVersion>
-  <Name>New Project</Name>
+  <Name>CreatureCollect</Name>
   <BackgroundColor A="255" R="119" G="119" B="119" />
   <GridColor A="255" R="255" G="240" B="90" />
   <LevelDefaultSize>
@@ -24,7 +24,9 @@
     <Height>480</Height>
   </CameraSize>
   <ExportCameraPosition>false</ExportCameraPosition>
-  <LevelValueDefinitions />
+  <LevelValueDefinitions>
+    <ValueDefinition xsi:type="IntValueDefinition" Name="Next" Default="-1" Min="0" Max="100" ShowSlider="false" />
+  </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="EntityLayerDefinition">
       <Name>Planets</Name>
@@ -85,7 +87,7 @@
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions>
-        <ValueDefinition xsi:type="IntValueDefinition" Name="sprite" Default="0" Min="0" Max="5" ShowSlider="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="sprite" Default="0" Min="0" Max="100" ShowSlider="false" />
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
@@ -222,6 +224,25 @@
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Freighter" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>128</Width>
+        <Height>128</Height>
+      </Size>
+      <Origin>
+        <X>64</X>
+        <Y>64</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="Freighter_1.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="IntValueDefinition" Name="wanted1" Default="-1" Min="0" Max="100" ShowSlider="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="wanted2" Default="-1" Min="0" Max="100" ShowSlider="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="wanted3" Default="-1" Min="0" Max="100" ShowSlider="false" />
+      </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
   </EntityDefinitions>

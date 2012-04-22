@@ -10,20 +10,28 @@ package
 	 */
 	public class GameWorld extends World 
 	{
-		[Embed(source = "../lib/Universe.oel", mimeType = "application/octet-stream")] private static const UNIVERSE:Class;
+		[Embed(source = "../lib/Tutorial.oel", mimeType = "application/octet-stream")] private static const TUTORIAL:Class;
+		[Embed(source = "../lib/Level1.oel", mimeType = "application/octet-stream")] private static const LEVEL1:Class;
+		[Embed(source = "../lib/Level2.oel", mimeType = "application/octet-stream")] private static const LEVEL2:Class;
+		[Embed(source = "../lib/Level3.oel", mimeType = "application/octet-stream")] private static const LEVEL3:Class;
+		
+		private static const LEVELS:Array = [TUTORIAL, LEVEL1, LEVEL2, LEVEL3];
 		
 		public var minx:Number = 0;
 		public var miny:Number = 0;
-		public var maxx:Number = 0;
-		public var maxy:Number = 0;
+		public var maxx:Number = 2400;
+		public var maxy:Number = 1800;
 		
-		public function GameWorld() 
+		public var next:int = -1;
+		public var splashDelay:int = -1;
+		
+		public function GameWorld(level:int=0) 
 		{
 			super();
 			camera.x = -400;
 			camera.y = -300;
 			
-			loadUniverse(UNIVERSE);
+			loadUniverse(LEVELS[level]);
 		}
 		
 		private function loadUniverse(source:Class):void
@@ -34,6 +42,9 @@ package
 			
 			var dataList:XMLList;
 			var dataElement:XML;
+			
+			next = xmlData.@Next;
+			trace("Next", next);
 			
 			dataList = xmlData.Planets.children();
 			for each (dataElement in dataList)
@@ -93,6 +104,10 @@ package
 					{
 						add(new Creature(dataElement.@x, dataElement.@y, 7, dataElement.@angle));
 					} break;
+					case "Freighter":
+					{
+						add(new Trader(dataElement.@x, dataElement.@y, dataElement.@wanted1, dataElement.@wanted2, dataElement.@wanted3));
+					} break;
 				}
 			}
 		}
@@ -101,6 +116,52 @@ package
 		{
 			super.update();
 			VerletEntity.verletTick(this);
+			
+			if (splashDelay == -1)
+			{
+				var traderList:Array = [];
+				getClass(Trader, traderList);
+				
+				var complete:Boolean = true;
+				for each (var t:Trader in traderList)
+				{
+					if (!t.full)
+					{
+						complete = false;
+					}
+				}
+				
+				if (complete)
+				{
+					removeAll();
+					camera.x = 0;
+					camera.y = 0;
+					if (next == -1)
+					{
+						add(new BackdropSprite(400, 300, 11));
+						splashDelay = 100;
+					}
+					else
+					{
+						add(new BackdropSprite(400, 300, 11));
+						splashDelay = 100;
+					}
+				}
+			}
+			else
+			{
+				if (splashDelay == 0)
+				{
+					removeAll();
+					if (next < 0) next = 0;
+					loadUniverse(LEVELS[next]);
+					splashDelay = -1;
+				}
+				else
+				{
+					--splashDelay;
+				}
+			}
 		}
 		
 	}

@@ -1,0 +1,7 @@
+<level Next="3">
+  <Planets>
+    <Planet id="0" x="1200" y="848" sprite="0" />
+    <Player id="1" x="1200" y="1008" angle="0" />
+    <Planet id="2" x="1200" y="1168" sprite="0" />
+  </Planets>
+</level>

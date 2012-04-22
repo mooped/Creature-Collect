@@ -19,6 +19,9 @@ package
 		private var ax:Number;
 		private var ay:Number;
 		
+		private var initx:Number = 0;
+		private var inity:Number = 0;
+		
 		protected var radius:Number = 0;
 		
 		protected var spin:Number = 0;
@@ -30,6 +33,8 @@ package
 			yo = y;
 			ax = 0;
 			ay = 0;
+			initx = x;
+			inity = y;
 		}
 		
 		public static function verletTick(world:World):void
@@ -127,6 +132,49 @@ package
 		{
 			ax += x;
 			ay += y;
+		}
+		
+		public function stop(amount:Number=0):void
+		{
+			xo = x - amount * (x - xo);
+			yo = y - amount * (y - yo);
+		}
+		
+		override public function update():void 
+		{
+			super.update();
+			
+			stop(0.999);
+			
+			const w:GameWorld = world as GameWorld;
+			var out:Boolean = false;
+			if (x < w.minx)
+			{
+				x = w.minx;
+				out = true;
+			}
+			if (y < w.miny)
+			{
+				y = w.miny;
+				out = true;
+			}
+			if (x > w.maxx)
+			{
+				x = w.maxx;
+				out = true;
+			}
+			if (y > w.maxy)
+			{
+				y = w.maxy;
+				out = true;
+			}
+			
+			if (out)
+			{
+				const dist:Number = distanceToPoint(initx, inity);
+				const force:Number = -32;
+				addForce(force * (x - initx) / dist, force * (y - inity) / dist)
+			}
 		}
 	}
 
