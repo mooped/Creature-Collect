@@ -2,11 +2,11 @@ package
 {
 	import net.flashpunk.Entity;
 	import net.flashpunk.Graphic;
-	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Mask;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	import GameWorld;
+	import RotateyImage;
 	
 	/**
 	 * ...
@@ -19,8 +19,8 @@ package
 		[Embed(source = '../lib/Ship_No_Thrusters.png')] private const PLAYER_STILL:Class;
 		[Embed(source = '../lib/Ship_Thrusters.png')] private const PLAYER_THRUST:Class;
 
-		private var still:Image = new Image(PLAYER_STILL);
-		private var thrust:Image = new Image(PLAYER_THRUST);
+		private var still:RotateyImage = new RotateyImage(PLAYER_STILL);
+		private var thrust:RotateyImage = new RotateyImage(PLAYER_THRUST);
 		
 		private var thrusting:Boolean = false;
 		private var turn:Number = 0;
@@ -38,8 +38,8 @@ package
 			thrusting = false;
 			angle = 0;
 			turn = 0;
-			updateAngle(true);
 			
+			updateAngles(true);
 			graphic = still;
 			
 			Input.define("Thrust", Key.W);
@@ -51,7 +51,7 @@ package
 		{
 			checkInput();
 			
-			updateAngle();
+			updateAngles();
 			
 			applyThrust();
 			applyGravity();
@@ -88,29 +88,11 @@ package
 			}
 		}
 		
-		public function updateAngle(force:Boolean=false):void
+		public function updateAngles(force:Boolean=false):void
 		{
-			var oldangle:Number = angle;
 			angle += turn;
-			if (angle != oldangle || force)
-			{
-				const xbx:Number = Math.sin(angle * RADIAN);
-				const xby:Number = -Math.cos(angle * RADIAN);
-				
-				const ybx:Number = xby;
-				const yby:Number = -xbx;
-				
-				const xo:Number = (xbx - ybx) * -32;
-				const yo:Number = (yby - xby) * -32;
-				
-				thrust.angle = angle;
-				thrust.x = xo;
-				thrust.y = yo;
-				
-				still.angle = angle;
-				still.x = xo;
-				still.y = yo;
-			}
+			still.setAngle(angle, force);
+			thrust.setAngle(angle, force);
 		}
 		
 		public function applyThrust():void

@@ -62,7 +62,6 @@ package
 				maxy = dataElement.@height;
 				maxx += minx;
 				maxy += miny;
-				trace(minx, miny, maxx, maxy);
 			}
 		}
 		
