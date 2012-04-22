@@ -14,8 +14,12 @@ package
 		[Embed(source = '../lib/Animal_2.png')] private const CREATURE_2:Class;
 		[Embed(source = '../lib/Animal_3.png')] private const CREATURE_3:Class;
 		[Embed(source = '../lib/Animal_4.png')] private const CREATURE_4:Class;
+		[Embed(source = '../lib/Animal_5.png')] private const CREATURE_5:Class;
+		[Embed(source = '../lib/Animal_6.png')] private const CREATURE_6:Class;
+		[Embed(source = '../lib/Animal_7.png')] private const CREATURE_7:Class;
+		[Embed(source = '../lib/Animal_8.png')] private const CREATURE_8:Class;
 		private const SPRITES:Array = [
-			CREATURE_1, CREATURE_2, CREATURE_3, CREATURE_4,
+			CREATURE_1, CREATURE_2, CREATURE_3, CREATURE_4, CREATURE_5, CREATURE_6, CREATURE_7, CREATURE_8,
 		];
 		
 		private var image:RotateyImage;
@@ -29,6 +33,11 @@ package
 			graphic = image;
 		}
 		
+		override public function update():void
+		{
+			image.setAngle(image.angle + spin);
+			super.update();
+		}
 	}
 
 }

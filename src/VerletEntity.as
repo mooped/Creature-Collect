@@ -21,6 +21,8 @@ package
 		
 		protected var radius:Number = 0;
 		
+		protected var spin:Number = 0;
+		
 		public function VerletEntity(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null)
 		{
 			super(x, y, graphic, mask);
@@ -61,6 +63,8 @@ package
 			
 				e.ax = 0;
 				e.ay = 0;
+				
+				e.spin *= 0.99;
 			}
 		}
 		
@@ -105,6 +109,12 @@ package
 				const radius:Number = a.radius + b.radius;
 				a.x = b.x - dx * radius;
 				a.y = b.y - dy * radius;
+				const vx:Number = a.x - a.xo;
+				const vy:Number = a.y - a.yo;
+				const v:Number = Math.sqrt(vx * vx + vy * vy);
+				const vxn:Number = vx / v;
+				const vyn:Number = vy / v;
+				a.spin -= (dx * vxn + dy * vyn) * v;
 			}
 		}
 		

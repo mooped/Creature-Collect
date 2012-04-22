@@ -1,26 +1,26 @@
 <level>
   <Planets>
-    <Planet id="0" x="1376" y="864" Sprite="0" />
-    <Planet id="1" x="640" y="384" Sprite="4" />
-    <Planet id="2" x="1344" y="176" Sprite="3" />
-    <Planet id="4" x="208" y="640" Sprite="1" />
-    <Planet id="5" x="752" y="1184" Sprite="1" />
-    <Planet id="6" x="224" y="1168" Sprite="2" />
-    <Planet id="7" x="432" y="1552" Sprite="5" />
-    <Planet id="8" x="80" y="1584" Sprite="3" />
-    <Planet id="9" x="1056" y="1648" Sprite="2" />
-    <Planet id="10" x="2176" y="176" Sprite="2" />
-    <Planet id="11" x="1648" y="432" Sprite="2" />
-    <Planet id="12" x="2176" y="1248" Sprite="3" />
-    <Planet id="13" x="1600" y="1456" Sprite="5" />
-    <Planet id="15" x="1984" y="896" Sprite="4" />
-    <Planet id="16" x="2032" y="1616" Sprite="0" />
-    <Planet id="18" x="1104" y="560" Sprite="1" />
-    <Planet id="19" x="80" y="64" Sprite="2" />
-    <Planet id="21" x="912" y="64" Sprite="5" />
+    <Planet id="0" x="1376" y="864" sprite="0" />
+    <Planet id="1" x="640" y="384" sprite="4" />
+    <Planet id="2" x="1344" y="176" sprite="3" />
+    <Planet id="4" x="208" y="640" sprite="1" />
+    <Planet id="5" x="752" y="1184" sprite="1" />
+    <Planet id="6" x="224" y="1168" sprite="2" />
+    <Planet id="7" x="432" y="1552" sprite="5" />
+    <Planet id="8" x="80" y="1584" sprite="3" />
+    <Planet id="9" x="1056" y="1648" sprite="2" />
+    <Planet id="10" x="2176" y="176" sprite="2" />
+    <Planet id="11" x="1648" y="432" sprite="2" />
+    <Planet id="12" x="2176" y="1248" sprite="3" />
+    <Planet id="13" x="1600" y="1456" sprite="5" />
+    <Planet id="15" x="1984" y="896" sprite="4" />
+    <Planet id="16" x="2032" y="1616" sprite="0" />
+    <Planet id="18" x="1104" y="560" sprite="1" />
+    <Planet id="19" x="80" y="64" sprite="2" />
+    <Planet id="21" x="912" y="64" sprite="5" />
     <Player id="23" x="1376" y="768" angle="0" />
-    <Planet id="24" x="1200" y="1264" Sprite="5" />
-    <Planet id="20" x="1856" y="96" Sprite="1" />
+    <Planet id="24" x="1200" y="1264" sprite="5" />
+    <Planet id="20" x="1856" y="96" sprite="1" />
     <BackdropSprite id="3" x="224" y="-352" angle="0" sprite="2" />
     <BackdropSprite id="14" x="880" y="-688" angle="0" sprite="1" />
     <BackdropSprite id="17" x="1504" y="-272" angle="0" sprite="1" />
@@ -128,9 +128,6 @@
     <Turtle id="125" x="0" y="1536" angle="0" />
     <Turtle id="126" x="176" y="1568" angle="0" />
     <Armadillo id="127" x="48" y="1696" angle="0" />
-    <Armadillo id="128" x="544" y="1536" angle="0" />
-    <Armadillo id="129" x="400" y="1648" angle="0" />
-    <Armadillo id="130" x="368" y="1456" angle="0" />
     <Kangaroo id="131" x="976" y="1552" angle="0" />
     <Kangaroo id="132" x="1152" y="1616" angle="0" />
     <Kangaroo id="133" x="1024" y="1744" angle="0" />
@@ -143,5 +140,42 @@
     <Turtle id="140" x="2160" y="64" angle="0" />
     <Turtle id="141" x="2272" y="224" angle="0" />
     <Kangaroo id="142" x="2112" y="256" angle="0" />
+    <Armadillo id="128" x="544" y="1520" angle="0" />
+    <Amoeba id="129" x="336" y="1488" angle="0" />
+    <Crocodile id="130" x="352" y="1648" angle="0" />
+    <Crocodile id="143" x="336" y="1232" angle="0" />
+    <Crocodile id="144" x="1312" y="1264" angle="0" />
+    <Crocodile id="145" x="1200" y="480" angle="0" />
+    <Crocodile id="146" x="1760" y="512" angle="0" />
+    <Crocodile id="147" x="1376" y="80" angle="0" />
+    <Crocodile id="148" x="768" y="144" angle="0" />
+    <Crocodile id="149" x="2208" y="288" angle="0" />
+    <Crocodile id="150" x="2112" y="848" angle="0" />
+    <Amoeba id="151" x="1152" y="1152" angle="0" />
+    <Amoeba id="152" x="704" y="496" angle="0" />
+    <Amoeba id="153" x="208" y="544" angle="0" />
+    <Amoeba id="154" x="2080" y="1312" angle="0" />
+    <Amoeba id="155" x="1696" y="1408" angle="0" />
+    <Amoeba id="156" x="1952" y="1552" angle="0" />
+    <Amoeba id="157" x="1104" y="1552" angle="0" />
+    <Amoeba id="158" x="128" y="1488" angle="0" />
+    <Fish id="159" x="816" y="1088" angle="0" />
+    <Fish id="160" x="208" y="112" angle="0" />
+    <Fish id="161" x="1776" y="160" angle="0" />
+    <Fish id="162" x="2304" y="1200" angle="0" />
+    <Fish id="163" x="1536" y="1312" angle="0" />
+    <Fish id="164" x="1248" y="880" angle="0" />
+    <Yak id="165" x="480" y="1472" angle="0" />
+    <Yak id="166" x="272" y="1264" angle="0" />
+    <Yak id="167" x="64" y="1488" angle="0" />
+    <Yak id="168" x="272" y="560" angle="0" />
+    <Yak id="169" x="176" y="144" angle="0" />
+    <Yak id="170" x="1040" y="128" angle="0" />
+    <Yak id="171" x="1472" y="240" angle="0" />
+    <Yak id="172" x="2272" y="128" angle="0" />
+    <Yak id="173" x="2128" y="1152" angle="0" />
+    <Yak id="174" x="2016" y="1008" angle="0" />
+    <Yak id="175" x="1408" y="992" angle="0" />
+    <Yak id="176" x="1904" y="1632" angle="0" />
   </Planets>
 </level>
