@@ -138,12 +138,12 @@ package
 					camera.y = 0;
 					if (next == -1)
 					{
-						add(new BackdropSprite(400, 300, 11));
+						add(new BackdropSprite(400 - 128, 300 - 128, 11));
 						splashDelay = 100;
 					}
 					else
 					{
-						add(new BackdropSprite(400, 300, 10));
+						add(new BackdropSprite(400 - 128, 300 - 128, 10));
 						splashDelay = 100;
 					}
 				}

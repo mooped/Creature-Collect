@@ -29,21 +29,15 @@ package
 		public function Trader(x:Number=0, y:Number=0, t1:int=-1, t2:int=-1, t3:int=-1) 
 		{
 			super(x, y, null, null);
-			var trader:RotateyImage = new RotateyImage(TRADER);
-			var wanted:RotateyImage = new RotateyImage(WANTED);
-
-			trader.setAngle(0, true);
-			wanted.setAngle(0, true);
-			images = new Graphiclist(trader, wanted);
+			
+			images = new Graphiclist();
 			graphic = images;
 			
 			wanted1 = t1;
 			wanted2 = t2;
 			wanted3 = t3;
 			
-			addImage(wanted1, 32, 32);
-			addImage(wanted2, 64, 32);
-			addImage(wanted3, 94, 32);
+			updateWanted();
 		}
 		
 		public function addImage(id:int, ox:Number, oy:Number):void
@@ -59,13 +53,25 @@ package
 		
 		public function updateWanted():void
 		{
-			for (var i:int = 2; i < images.count; ++i)
+			images.removeAll()
+			var trader:RotateyImage = new RotateyImage(TRADER);
+			trader.setAngle(0, true);
+			images.add(trader);
+			if (!full)
 			{
-				images.removeAt(i);
+				var wanted:RotateyImage = new RotateyImage(WANTED);
+				wanted.setAngle(0, true);
+				images.add(wanted);
+				addImage(wanted1, 32, 32);
+				addImage(wanted2, 64, 32);
+				addImage(wanted3, 94, 32);
 			}
-			addImage(wanted1, 32, 32);
-			addImage(wanted2, 64, 32);
-			addImage(wanted3, 94, 32);
+			else
+			{
+				var fullIcon:RotateyImage = new RotateyImage(FULL);
+				fullIcon.setAngle(0, true);
+				images.add(fullIcon);	
+			}
 		}
 		
 		override public function update():void
@@ -129,10 +135,7 @@ package
 				}
 				*/
 				full = true;
-				var fullIcon:RotateyImage = new RotateyImage(FULL);
-				fullIcon.setAngle(0, true);
-				images.removeAt(1);
-				images.add(fullIcon);
+				updateWanted();
 			}
 		}
 	}
