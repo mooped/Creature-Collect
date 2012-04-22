@@ -31,5 +31,29 @@
     <Freighter id="28" x="768" y="864" wanted1="0" wanted2="0" wanted3="-1" />
     <Freighter id="29" x="1552" y="688" wanted1="5" wanted2="6" wanted3="-1" />
     <Freighter id="30" x="1696" y="1504" wanted1="7" wanted2="0" wanted3="6" />
+    <BackdropSprite id="31" x="288" y="-32" angle="0" sprite="0" />
+    <BackdropSprite id="32" x="64" y="320" angle="0" sprite="0" />
+    <BackdropSprite id="33" x="-240" y="752" angle="0" sprite="2" />
+    <BackdropSprite id="34" x="96" y="1104" angle="0" sprite="0" />
+    <BackdropSprite id="35" x="-224" y="1344" angle="0" sprite="1" />
+    <BackdropSprite id="36" x="48" y="1552" angle="0" sprite="0" />
+    <BackdropSprite id="37" x="0" y="1872" angle="0" sprite="0" />
+    <BackdropSprite id="38" x="624" y="1744" angle="0" sprite="1" />
+    <BackdropSprite id="39" x="1136" y="2064" angle="0" sprite="2" />
+    <BackdropSprite id="40" x="1504" y="1776" angle="0" sprite="0" />
+    <BackdropSprite id="41" x="1968" y="2032" angle="0" sprite="2" />
+    <BackdropSprite id="42" x="2128" y="1648" angle="0" sprite="0" />
+    <BackdropSprite id="43" x="2480" y="1600" angle="0" sprite="1" />
+    <BackdropSprite id="44" x="2272" y="1328" angle="0" sprite="0" />
+    <BackdropSprite id="45" x="2704" y="1136" angle="0" sprite="0" />
+    <BackdropSprite id="46" x="2304" y="912" angle="0" sprite="1" />
+    <BackdropSprite id="47" x="2688" y="688" angle="0" sprite="2" />
+    <BackdropSprite id="48" x="2336" y="496" angle="0" sprite="0" />
+    <BackdropSprite id="49" x="2656" y="256" angle="0" sprite="0" />
+    <BackdropSprite id="50" x="2080" y="16" angle="0" sprite="2" />
+    <BackdropSprite id="51" x="1856" y="-240" angle="0" sprite="0" />
+    <BackdropSprite id="52" x="1504" y="-48" angle="0" sprite="0" />
+    <BackdropSprite id="53" x="816" y="-272" angle="0" sprite="0" />
+    <BackdropSprite id="54" x="784" y="-32" angle="0" sprite="2" />
   </Planets>
 </level>
