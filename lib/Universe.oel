@@ -79,5 +79,6 @@
     <BackdropSprite id="76" x="2576" y="1088" angle="0" sprite="1" />
     <BackdropSprite id="77" x="-112" y="1152" angle="0" sprite="2" />
     <BackdropSprite id="78" x="528" y="-224" angle="0" sprite="1" />
+    <KnownUniverse id="79" x="-928" y="-864" width="4528" height="3600" />
   </Planets>
 </level>

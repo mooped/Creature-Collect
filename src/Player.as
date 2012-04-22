@@ -6,6 +6,7 @@ package
 	import net.flashpunk.Mask;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
+	import GameWorld;
 	
 	/**
 	 * ...
@@ -18,24 +19,28 @@ package
 		[Embed(source = '../lib/Ship_No_Thrusters.png')] private const PLAYER_STILL:Class;
 		[Embed(source = '../lib/Ship_Thrusters.png')] private const PLAYER_THRUST:Class;
 
-		private var m_still:Image = new Image(PLAYER_STILL);
-		private var m_thrust:Image = new Image(PLAYER_THRUST);
+		private var still:Image = new Image(PLAYER_STILL);
+		private var thrust:Image = new Image(PLAYER_THRUST);
 		
 		private var thrusting:Boolean = false;
 		private var turn:Number = 0;
 		
+		private var initx:Number = 0;
+		private var inity:Number = 0;
 		private var angle:Number = 0;
 		
 		public function Player(x:Number=0, y:Number=0)
 		{
 			super(x, y, null, null);
+			initx = x;
+			inity = y;
 			
 			thrusting = false;
 			angle = 0;
 			turn = 0;
 			updateAngle(true);
 			
-			graphic = m_still;
+			graphic = still;
 			
 			Input.define("Thrust", Key.W);
 			Input.define("Left", Key.A);
@@ -51,6 +56,8 @@ package
 			applyThrust();
 			applyGravity();
 			
+			checkBounds();
+			
 			updateCamera();
 		}
 		
@@ -59,12 +66,12 @@ package
 			if (Input.pressed("Thrust"))
 			{
 				thrusting = true;
-				graphic = m_thrust;
+				graphic = thrust;
 			}
 			if (Input.released("Thrust"))
 			{
 				thrusting = false;
-				graphic = m_still;
+				graphic = still;
 			}
 			
 			if (Input.pressed("Left"))
@@ -96,13 +103,13 @@ package
 				const xo:Number = (xbx - ybx) * -32;
 				const yo:Number = (yby - xby) * -32;
 				
-				m_thrust.angle = angle;
-				m_thrust.x = xo;
-				m_thrust.y = yo;
+				thrust.angle = angle;
+				thrust.x = xo;
+				thrust.y = yo;
 				
-				m_still.angle = angle;
-				m_still.x = xo;
-				m_still.y = yo;
+				still.angle = angle;
+				still.x = xo;
+				still.y = yo;
 			}
 		}
 		
@@ -129,6 +136,39 @@ package
 					var ay:Number = ((y - planet.y) * invdist) * (1 - (dist / planet.gravityDist)) * planet.gravity;
 					//addForce(-ax, -ay);
 				}
+			}
+		}
+		
+		public function checkBounds():void
+		{
+			const w:GameWorld = world as GameWorld;
+			var out:Boolean = false;
+			if (x < w.minx)
+			{
+				x = w.minx;
+				out = true;
+			}
+			if (y < w.miny)
+			{
+				y = w.miny;
+				out = true;
+			}
+			if (x > w.maxx)
+			{
+				x = w.maxx;
+				out = true;
+			}
+			if (y > w.maxy)
+			{
+				y = w.maxy;
+				out = true;
+			}
+			
+			if (out)
+			{
+				const dist:Number = distanceToPoint(initx, inity);
+				const force:Number = -32;
+				addForce(force * (x - initx) / dist, force * (y - inity) / dist)
 			}
 		}
 		

@@ -12,6 +12,11 @@ package
 	{
 		[Embed(source = "../lib/Universe.oel", mimeType = "application/octet-stream")] private static const UNIVERSE:Class;
 		
+		public var minx:Number = 0;
+		public var miny:Number = 0;
+		public var maxx:Number = 0;
+		public var maxy:Number = 0;
+		
 		public function GameWorld() 
 		{
 			super();
@@ -19,20 +24,6 @@ package
 			camera.y = -300;
 			
 			loadUniverse(UNIVERSE);
-			
-			/*
-			add(new Planet(0, 0, 0));
-			add(new Planet(-400, -750, 1));
-			add(new Planet(1000, -800, 2));
-			add(new Planet(170, -600, 3));
-			add(new Planet(900, -100, 4));
-			add(new Planet(-600, 300, 5));
-			add(new Planet(200, 450, 3));
-			add(new Planet(-300, 600, 1));
-			add(new Planet(800, 500, 5));
-			
-			add(new Player(0, 0));
-			*/
 		}
 		
 		private function loadUniverse(source:Class):void
@@ -60,6 +51,18 @@ package
 			for each (dataElement in dataList)
 			{
 				add(new Player(dataElement.@x, dataElement.@y));
+			}
+			
+			dataList = xmlData.Planets.KnownUniverse;
+			for each (dataElement in dataList)
+			{
+				minx = dataElement.@x;
+				miny = dataElement.@y;
+				maxx = dataElement.@width;
+				maxy = dataElement.@height;
+				maxx += minx;
+				maxy += miny;
+				trace(minx, miny, maxx, maxy);
 			}
 		}
 		

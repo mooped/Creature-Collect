@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <OgmoVersion>2.0.0.38</OgmoVersion>
   <Name>New Project</Name>
-  <BackgroundColor A="255" R="125" G="160" B="255" />
+  <BackgroundColor A="255" R="119" G="119" B="119" />
   <GridColor A="255" R="255" G="240" B="90" />
   <LevelDefaultSize>
     <Width>2400</Width>
@@ -16,7 +16,7 @@
     <Width>2400</Width>
     <Height>1800</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\moop\devel\TinyWorld\src\levels\TinyWorld.oep</Filename>
+  <Filename>C:\Users\moop\devel\TinyWorld\lib\TinyWorld.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>false</CameraEnabled>
   <CameraSize>
@@ -49,7 +49,7 @@
         <X>128</X>
         <Y>128</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\..\lib\planet_1.png" Tiled="false">
+      <ImageDefinition DrawMode="Image" ImagePath="planet_1.png" Tiled="false">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions>
@@ -57,7 +57,7 @@
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
-    <EntityDefinition Name="Player" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="4">
+    <EntityDefinition Name="Player" Limit="1" ResizableX="false" ResizableY="false" Rotatable="true" RotateIncrement="4">
       <Size>
         <Width>64</Width>
         <Height>64</Height>
@@ -66,7 +66,7 @@
         <X>32</X>
         <Y>32</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\..\lib\Ship_No_Thrusters.png" Tiled="false">
+      <ImageDefinition DrawMode="Image" ImagePath="Ship_No_Thrusters.png" Tiled="false">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
@@ -81,12 +81,27 @@
         <X>64</X>
         <Y>64</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\..\lib\QuestionMark_1.png" Tiled="false">
+      <ImageDefinition DrawMode="Image" ImagePath="QuestionMark_1.png" Tiled="false">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions>
         <ValueDefinition xsi:type="IntValueDefinition" Name="sprite" Default="0" Min="0" Max="2" ShowSlider="false" />
       </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="KnownUniverse" Limit="1" ResizableX="true" ResizableY="true" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="255" G="128" B="64" />
+      </ImageDefinition>
+      <ValueDefinitions />
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
   </EntityDefinitions>
