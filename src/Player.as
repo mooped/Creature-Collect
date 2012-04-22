@@ -2,6 +2,7 @@ package
 {
 	import net.flashpunk.Entity;
 	import net.flashpunk.Graphic;
+	import net.flashpunk.graphics.Graphiclist;
 	import net.flashpunk.Mask;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
@@ -18,9 +19,13 @@ package
 		
 		[Embed(source = '../lib/Ship_No_Thrusters.png')] private const PLAYER_STILL:Class;
 		[Embed(source = '../lib/Ship_Thrusters.png')] private const PLAYER_THRUST:Class;
+		
+		[Embed(source = '../lib/Tutorial_1.png')] private const TUTORIAL:Class;
 
 		private var still:RotateyImage = new RotateyImage(PLAYER_STILL);
 		private var thrust:RotateyImage = new RotateyImage(PLAYER_THRUST);
+		private var tutorial:RotateyImage = new RotateyImage(TUTORIAL);
+		private var graphics:Graphiclist;
 		
 		private var thrusting:Boolean = false;
 		private var turn:Number = 0;
@@ -28,6 +33,9 @@ package
 		private var initx:Number = 0;
 		private var inity:Number = 0;
 		private var angle:Number = 0;
+		
+		private var idle:int = 0;
+		private var tutorialActive:Boolean = true;
 		
 		public function Player(x:Number=0, y:Number=0)
 		{
@@ -40,7 +48,9 @@ package
 			turn = 0;
 			
 			updateAngles(true);
-			graphic = still;
+			
+			graphics = new Graphiclist(still);
+			graphic = graphics;
 			radius = still.width * 0.45;
 			
 			Input.define("Thrust", Key.W);
@@ -52,12 +62,14 @@ package
 		{
 			checkInput();
 			
+			updateTutorial();
 			updateAngles();
 			
 			applyThrust();
 			
 			checkBounds();
 			
+			updateGraphics();
 			updateCamera();
 		}
 		
@@ -66,25 +78,45 @@ package
 			if (Input.pressed("Thrust"))
 			{
 				thrusting = true;
-				graphic = thrust;
+				resetTutorial();
 			}
 			if (Input.released("Thrust"))
 			{
 				thrusting = false;
-				graphic = still;
+				resetTutorial();
 			}
 			
 			if (Input.pressed("Left"))
 			{
 				turn = +4;
+				resetTutorial();
 			}
 			else if (Input.pressed("Right"))
 			{
 				turn = -4;
+				resetTutorial();
 			}
 			else if (Input.released("Left") || Input.released("Right"))
 			{
 				turn = 0;
+			}
+		}
+		
+		public function resetTutorial():void
+		{
+			idle = 0;
+			tutorialActive = false;
+		}
+		
+		public function updateTutorial():void
+		{
+			const idleThreshold:int = 600;
+			
+			++idle;
+			
+			if (idle > idleThreshold)
+			{
+				tutorialActive = true;
 			}
 		}
 		
@@ -93,6 +125,7 @@ package
 			angle += turn;
 			still.setAngle(angle, force);
 			thrust.setAngle(angle, force);
+			tutorial.setAngle(angle, force);
 		}
 		
 		public function applyThrust():void
@@ -136,6 +169,23 @@ package
 			}
 		}
 		
+		public function updateGraphics():void
+		{
+			graphics.removeAll();
+			if (thrusting)
+			{
+				graphics.add(thrust);
+			}
+			else
+			{
+				graphics.add(still);
+			}
+			if (tutorialActive)
+			{
+				graphics.add(tutorial);
+			}
+		}
+		
 		public function updateCamera():void
 		{
 			world.camera.x = x - 400;
@@ -143,5 +193,5 @@ package
 		}
 		
 	}
-
+	
 }
