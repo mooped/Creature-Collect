@@ -44,6 +44,7 @@ package
 			var dataElement:XML;
 			
 			next = xmlData.@Next;
+			trace("Next level: ", next);
 			
 			dataList = xmlData.Planets.children();
 			for each (dataElement in dataList)
@@ -142,7 +143,7 @@ package
 					}
 					else
 					{
-						add(new BackdropSprite(400, 300, 11));
+						add(new BackdropSprite(400, 300, 10));
 						splashDelay = 100;
 					}
 				}
