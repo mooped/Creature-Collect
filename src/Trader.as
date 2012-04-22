@@ -50,11 +50,22 @@ package
 		{
 			if (id >= 0)
 			{
-				var creature:Image = Creature.getSprite(wanted1);
+				var creature:Image = Creature.getSprite(id);
 				creature.x += ox;
 				creature.y += oy;
 				images.add(creature);
 			}
+		}
+		
+		public function updateWanted():void
+		{
+			for (var i:int = 2; i < images.count; ++i)
+			{
+				images.removeAt(i);
+			}
+			addImage(wanted1, 32, 32);
+			addImage(wanted2, 64, 32);
+			addImage(wanted3, 94, 32);
 		}
 		
 		override public function update():void
@@ -77,23 +88,33 @@ package
 					if (!got1 && creature.creatureType == wanted1)
 					{
 						creature1 = creature;
+						wanted1 = -1;
+						world.remove(creature1);
 						got1 = true;
+						updateWanted();
 					}
 					else if (!got2 && creature.creatureType == wanted2)
 					{
 						creature2 = creature;
+						wanted2 = -1
+						world.remove(creature2);
 						got2 = true;
+						updateWanted();
 					}
 					else if (!got3 && creature.creatureType == wanted3)
 					{
 						creature3 = creature;
+						wanted3 = -1
+						world.remove(creature3);
 						got3 = true;
+						updateWanted();
 					}
 				}
 			}
 			
 			if (got1 && got2 && got3)
 			{
+				/*
 				if (creature1)
 				{
 					world.remove(creature1);
@@ -106,6 +127,7 @@ package
 				{
 					world.remove(creature3);
 				}
+				*/
 				full = true;
 				var fullIcon:RotateyImage = new RotateyImage(FULL);
 				fullIcon.setAngle(0, true);
