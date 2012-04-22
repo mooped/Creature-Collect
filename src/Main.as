@@ -14,7 +14,7 @@ package
 		{
 			super(800, 600, 60, true);
 			
-			FP.world = new GameWorld(1);
+			FP.world = new GameWorld(0);
 		}
 		
 		override public function init():void 

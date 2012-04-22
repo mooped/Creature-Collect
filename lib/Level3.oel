@@ -1,8 +1,67 @@
 <level Next="-1">
   <Planets>
     <Player id="0" x="1136" y="864" angle="0" />
-    <Planet id="1" x="992" y="672" sprite="0" />
-    <Planet id="2" x="1312" y="672" sprite="0" />
-    <Planet id="3" x="1152" y="1040" sprite="0" />
+    <Planet id="1" x="992" y="608" sprite="0" />
+    <Planet id="2" x="1472" y="704" sprite="0" />
+    <Planet id="3" x="896" y="1040" sprite="0" />
+    <Planet id="4" x="1328" y="1072" sprite="0" />
+    <Planet id="5" x="528" y="272" sprite="0" />
+    <Planet id="6" x="2016" y="256" sprite="0" />
+    <Planet id="7" x="2048" y="1520" sprite="0" />
+    <Planet id="8" x="352" y="1584" sprite="0" />
+    <Planet id="9" x="1232" y="512" sprite="0" />
+    <Planet id="10" x="736" y="752" sprite="0" />
+    <Planet id="11" x="1584" y="976" sprite="0" />
+    <Planet id="12" x="1456" y="1328" sprite="0" />
+    <Planet id="13" x="832" y="1360" sprite="0" />
+    <Turtle id="14" x="1072" y="768" angle="0" />
+    <Turtle id="15" x="1312" y="848" angle="0" />
+    <Armadillo id="16" x="1184" y="736" angle="0" />
+    <Armadillo id="17" x="1088" y="960" angle="0" />
+    <Armadillo id="18" x="928" y="864" angle="0" />
+    <Armadillo id="19" x="1216" y="928" angle="0" />
+    <Chicken id="20" x="1312" y="768" angle="0" />
+    <Chicken id="21" x="1040" y="864" angle="0" />
+    <Amoeba id="22" x="1184" y="640" angle="0" />
+    <Amoeba id="23" x="1408" y="864" angle="0" />
+    <Crocodile id="24" x="960" y="800" angle="0" />
+    <Crocodile id="25" x="1184" y="1040" angle="0" />
+    <Crocodile id="26" x="976" y="912" angle="0" />
+    <Crocodile id="27" x="1376" y="928" angle="0" />
+    <Fish id="28" x="1216" y="816" angle="0" />
+    <Freighter id="31" x="1168" y="1632" wanted1="0" wanted2="6" wanted3="-1" />
+    <Freighter id="32" x="192" y="1600" wanted1="3" wanted2="3" wanted3="3" />
+    <Freighter id="33" x="512" y="400" wanted1="7" wanted2="-1" wanted3="-1" />
+    <Freighter id="34" x="2160" y="352" wanted1="4" wanted2="4" wanted3="-1" />
+    <Freighter id="35" x="2192" y="1616" wanted1="1" wanted2="-1" wanted3="-1" />
+    <Freighter id="29" x="1088" y="1264" wanted1="1" wanted2="6" wanted3="-1" />
+    <Chicken id="30" x="1104" y="1024" angle="0" />
+    <BackdropSprite id="36" x="160" y="48" angle="0" sprite="0" />
+    <BackdropSprite id="37" x="-224" y="160" angle="0" sprite="0" />
+    <BackdropSprite id="38" x="80" y="416" angle="0" sprite="2" />
+    <BackdropSprite id="39" x="-304" y="1008" angle="0" sprite="0" />
+    <BackdropSprite id="40" x="96" y="992" angle="0" sprite="0" />
+    <BackdropSprite id="41" x="-304" y="1600" angle="0" sprite="0" />
+    <BackdropSprite id="42" x="-96" y="1952" angle="0" sprite="1" />
+    <BackdropSprite id="43" x="352" y="2096" angle="0" sprite="0" />
+    <BackdropSprite id="44" x="672" y="1856" angle="0" sprite="1" />
+    <BackdropSprite id="45" x="1056" y="2144" angle="0" sprite="0" />
+    <BackdropSprite id="46" x="1264" y="1824" angle="0" sprite="2" />
+    <BackdropSprite id="47" x="2016" y="2304" angle="0" sprite="0" />
+    <BackdropSprite id="48" x="1936" y="1936" angle="0" sprite="1" />
+    <BackdropSprite id="49" x="2432" y="1936" angle="0" sprite="0" />
+    <BackdropSprite id="50" x="2672" y="1616" angle="0" sprite="1" />
+    <BackdropSprite id="51" x="2480" y="1296" angle="0" sprite="2" />
+    <BackdropSprite id="52" x="2832" y="1072" angle="0" sprite="0" />
+    <BackdropSprite id="53" x="2368" y="800" angle="0" sprite="2" />
+    <BackdropSprite id="54" x="2736" y="608" angle="0" sprite="1" />
+    <BackdropSprite id="55" x="2560" y="48" angle="0" sprite="0" />
+    <BackdropSprite id="56" x="2144" y="-304" angle="0" sprite="1" />
+    <BackdropSprite id="57" x="1968" y="-80" angle="0" sprite="0" />
+    <BackdropSprite id="58" x="1408" y="-288" angle="0" sprite="1" />
+    <BackdropSprite id="59" x="1440" y="-32" angle="0" sprite="2" />
+    <BackdropSprite id="60" x="720" y="-208" angle="0" sprite="2" />
+    <BackdropSprite id="61" x="240" y="-256" angle="0" sprite="2" />
+    <KnownUniverse id="62" x="-176" y="-192" width="2816" height="2304" />
   </Planets>
 </level>

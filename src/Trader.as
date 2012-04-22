@@ -93,7 +93,7 @@ package
 						got1 = true;
 						updateWanted();
 					}
-					if (!got2 && creature.creatureType == wanted2)
+					else if (!got2 && creature.creatureType == wanted2)
 					{
 						creature2 = creature;
 						wanted2 = -1
@@ -101,7 +101,7 @@ package
 						got2 = true;
 						updateWanted();
 					}
-					if (!got3 && creature.creatureType == wanted3)
+					else if (!got3 && creature.creatureType == wanted3)
 					{
 						creature3 = creature;
 						wanted3 = -1
